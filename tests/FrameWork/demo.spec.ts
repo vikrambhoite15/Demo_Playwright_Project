@@ -1,11 +1,13 @@
 
-import {test} from "@playwright/test";
+import {test,expect} from "@playwright/test";
 
 //fixture: means global variable.(page,browser)
 
-test('Verify saucedemo page', async ({page})=>{
+test.only('Verify saucedemo page', async ({page})=>{
     await page.goto("https://www.saucedemo.com/");
     console.log("Title:",await page.title());
+
+    await page.waitForTimeout(3000);
     
 });
 
